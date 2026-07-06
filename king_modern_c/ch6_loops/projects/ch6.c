@@ -73,3 +73,4 @@ void reduce_fraction() {
 
     printf("In lowest form: %d/%d\n", numerator / gcd, denominator / gcd);
 }
+
