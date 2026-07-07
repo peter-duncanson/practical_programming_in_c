@@ -3,3 +3,7 @@ void repeated_digit_table(void);   // 2
 void repeated_digits_loop(void);   // 3
 void reverse_improved(void);       // 4
 void monthly_interest(void);       // 5
+void leet_speek(void);             // 6
+void marginals(void);              // 7
+void quiz_data(void);              // 8
+void random_walk(void);            // 9
