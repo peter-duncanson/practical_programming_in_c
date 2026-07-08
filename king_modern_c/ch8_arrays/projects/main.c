@@ -14,7 +14,8 @@ int main(void) {
     // leet_speek();
     // marginals();
     // quiz_data();
-    random_walk();
+    // random_walk();
+    find_flight();
 
     return 0;
 }

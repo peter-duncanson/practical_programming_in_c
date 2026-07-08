@@ -331,8 +331,6 @@ void marginals(void) {
 void quiz_data(void) {
     
     int i, j, high_score, low_score = 0;
-
-
     int student_totals[5] = { 0 };
     float student_means[5] = { 0.0 };
 
@@ -340,13 +338,13 @@ void quiz_data(void) {
     int quiz_high[5] = { 0 };
     float quiz_mean[5] = { 0.0 };
 
-
     int a[5][5] = { { 0 } };
 
     // read everything in
     for (i = 0; i < 5; i++) {
         printf("Enter scores for student %d: ", i + 1);
-        scanf("%d %d %d %d %d", &a[i][0], &a[i][1], &a[i][2], &a[i][3], &a[i][4]);
+        scanf("%d %d %d %d %d", 
+        &a[i][0], &a[i][1], &a[i][2], &a[i][3], &a[i][4]);
     }
 
     // -------- Debugging array ------------
@@ -497,5 +495,34 @@ void random_walk(void) {
 //==============================================================================
 
 //==============================================================================
-// (10) 
+// (10) Modify Programming Project 8 From Chapter 5 so that the departure times
+// in an array and the arrival times are stored in a second array. (The times
+// are integers, representing the number of minutes since midnight.) The program
+// will use a loop to search the array of departure times for the one closest
+// to the time entered by the user.
+// From Chapter 5 -> 
+// The following table shows the daily flights from one city to another:
+//
+// Departure Time       Arrival Time
+//    08:00am              10:16am
+//    09:43am              11:52am
+//    11:19am              01:31pm
+//    12:47pm              03:00pm
+//    02:00pm              04:08pm
+//    03:45pm              05:55pm
+//    07:00pm              09:20pm
+//    09:45pm              11:58pm
+//
+// Write a program to ask the user to enter a time (expressed in hours and
+// minues, using the 24-hour clock). The program then displays the departure
+// time and arrival times for the flight whose departure time is closest to that
+// entered by the user.
+void find_flight(void) {
+
+    int depatures[8] = { 480, 583, 679, 767, 840, 945, 1140, 1305 };
+    int arrivals[8] = { 616, 712, 811, 900, 968, 1075, 1280, 1438 };
+    
+    char buffer[];
+
+}
 //==============================================================================

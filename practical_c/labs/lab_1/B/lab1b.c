@@ -15,14 +15,14 @@ int num_neighbors(int x, int y);
 
 int main(int argc, char **argv) {
 
-    if (argc == 0) {
+    if (argc == 1) {
         printf("Error, file type must be passed in\n");
         return 1;
     } 
     
     initialize_world_from_file(argv[1]);
 
-    for (int i=0; i<NUM_GENERATIONS; i++) {
+    for (int i = 0; i < NUM_GENERATIONS; i++) {
         next_generation();
     }
 
