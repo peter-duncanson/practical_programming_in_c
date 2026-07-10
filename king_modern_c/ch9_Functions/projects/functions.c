@@ -7,18 +7,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #incldue "functions.h"
-// =============================================================================
-// (1) Write a program that asks the user to enter a series of integers (which
-// are then stored in an array), then sorts the integers by calling the function
-// selection_sort(). When given an array with n elements, selection_sort() must
-// do the following:
-//
-//      1. Search the array and find the largest element, then move it
-//      to the last position in the array.
-//      2. Call itself recursively to sort the n - 1 elements of the
-//      array.
-//
-// =============================================================================
 
 // =============================================================================
 // (2) Modify Programming Project 5 from Chapter 5 so that it uses a function to
