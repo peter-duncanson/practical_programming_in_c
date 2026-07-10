@@ -1,26 +1,26 @@
 //==============================================================================
-// Reverses a series of numbers using variable length array
+// Reverses a series of numbers
 // C Programming: A Modern Approach 2nd Edition - K.N. King
-// Page 174
+// Page 164
 //==============================================================================
 #include <stdio.h>
 
-int main(void) {
+#define N 10
 
-    int i, n;
+int main(void)
+{
 
-    printf("How many numbers do you want to reverse? ");
-    scanf("%d", &n);
+    int a[N], i;
 
-    int a[n];
-
-    printf("Enter %d numbers: ", n);
-    for (i = 0; i < n; i++) {
+    printf("Enter %d numbers: ", N);
+    for (i = 0; i < N; i++)
+    {
         scanf("%d", &a[i]);
     }
 
     printf("In reverse order:");
-    for (i = n - 1; i >= 0; i--) {
+    for (i = N - 1; i >= 0; i--)
+    {
         printf(" %d", a[i]);
     }
     puts("");
