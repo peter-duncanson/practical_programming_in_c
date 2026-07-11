@@ -57,7 +57,7 @@ int get_largest(int first, int second)
 // loop2 = loop3 / loop2; return(loop2); }
 
 // This function divides the sum of its elements by the last element
-double weighted_avg(double vec[], int n)
+double weighted_average(double vec[], int n)
 {
     double sum = 0.0;
 
