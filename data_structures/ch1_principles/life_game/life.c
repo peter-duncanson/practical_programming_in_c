@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdbool.h>
 #include "life.h"
 
-
-void copyMap(Grid map, Grid newmap)
+void copy_map(Grid map, Grid newmap)
 {
     int row, col;
 
@@ -16,7 +13,7 @@ void copyMap(Grid map, Grid newmap)
     }
 }
 
-bool userSaysYes(void)
+bool generate_next(void)
 {
     int c;
     printf("(y/n)? ");
@@ -59,7 +56,7 @@ void init(Grid map)
     while (getchar() != '\n');
 }
 
-int neighborCount(Grid map, int row, int col)
+int neighbor_count(Grid map, int row, int col)
 {
     int i, j, count = 0;
 
@@ -74,7 +71,7 @@ int neighborCount(Grid map, int row, int col)
     return (map[row][col] == ALIVE) ? count - 1 : count;
 }
 
-void writeMap(Grid map)
+void write_map(Grid map)
 {
     int row, col;
     puts("\n");
