@@ -7,11 +7,11 @@
 // int a[] = { 5, 15, 34, 54, 14, 2, 52, 72 };
 // int *p = &a[1], *q = &a[5];
 //
-// (a) What is the value of *(p + 3)?
-// (b) What is the value of *(q - 3)?
-// (c) What is the value of q - p?
-// (d) Is the condition P < q true or false?
-// (e) Is the condition *p < *q true or false?
+// (a) What is the value of *(p + 3)?               14
+// (b) What is the value of *(q - 3)?               34
+// (c) What is the value of q - p?                  4
+// (d) Is the condition P < q true or false?        true
+// (e) Is the condition *p < *q true or false?      false
 // ================================================================================================
 
 // ================================================================================================
@@ -19,6 +19,12 @@
 // and high point to elements of an array. Why is the following statement illegal, and how could it
 // be fixed?
 // middle = (low + high) / 2;
+//
+// Addition between two pointers like this is not allowed, the result could easily be out of bounds
+// of the array, and therefore dividing by two would yield a completely meaningless result.
+// The proper way to do this would be:
+//  
+// middle = low + (high - low) / 2;
 // ================================================================================================
 
 // ================================================================================================
@@ -35,11 +41,57 @@
 //      *p++ = *q;
 //      *q-- = temp;
 // }
+//
+// { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 }
 // ================================================================================================
 
 // ================================================================================================
 // (4) Rewrite the make_empty(), is_empty(), and is_full() functions of section 10.2 to use the
 // pointer variable top_ptr instead of the integer variable top.
+//
+// From section 10.2 ->
+//
+// #define STACK_SIZE 100
+//
+// int contents[STACK_SIZE];
+// int top = 0;
+//
+// void make_empty(void)
+// {
+//      top = 0;
+// }
+//
+// bool is_empty(void)
+// {
+//      return top == 0;
+// }
+//
+// bool is_full(void)
+// {
+//      return top == STACK_SIZE;
+// }
+//
+// Rewritten...
+//
+// #define STACK_SIZE 100
+//
+// int contents[STACK_SIZE];
+// int *top_ptr = contents;
+//
+// void make_empty(void)
+// {
+//      top_ptr = contents;
+// }
+//
+// bool is_empty(void)
+// {
+//      return top_ptr == contents;
+// }
+//
+// bool is_full(void)
+// {
+//      return top_ptr == &contents[STACK_SIZE];
+// }
 // ================================================================================================
 
 // ================================================================================================
@@ -47,10 +99,10 @@
 // assignment p = a has just been performed, which of the following expressions are illegal becasue
 // of mismatched types? Of the remaining expressions, which are true (have a nonzero value)?
 //
-// (a) p == a[0];
-// (b) p == &a[0];
-// (c) *p == a[0];
-// (d) p[0] == a[0];
+// (a) p == a[0];       <- illegal
+// (b) p == &a[0];      <- legal, and true
+// (c) *p == a[0];      <- legal, and true
+// (d) p[0] == a[0];    <- 
 // ================================================================================================
 
 // ================================================================================================
